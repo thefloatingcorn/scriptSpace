@@ -41,6 +41,9 @@ class Player:
         Player.playerNum += 1
         self.id = Player.playerNum
 
+    def __lt__(player1, player2):
+        return player1.id < player2.id
+
     def makeDecision(self, product):
         if product.price > self.money:
             print("{} can't afford it! (balance:{})".format(self.name, self.money))
